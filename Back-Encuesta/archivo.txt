@@ -1,3 +1,7 @@
+DEPENDENCIAS
+npm init -y
+npm install express mysql2 sequelize dotenv bcryptjs jsonwebtoken cors helmet express-validator
+
 REGISTRAR USUARIO
 http://localhost:5000/api/usuarios/register
 {

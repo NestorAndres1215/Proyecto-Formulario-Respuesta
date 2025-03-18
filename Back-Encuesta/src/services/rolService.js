@@ -2,6 +2,8 @@ const Rol = require('../models/Rol');
 class RolService {
 
     static async registrarRol(datosRol) {
+        console.log(datosRol.nombre)
+    
         try {
             // Validar que el nombre del rol no esté vacío
             if (!datosRol.nombre || datosRol.nombre.trim() === '') {
