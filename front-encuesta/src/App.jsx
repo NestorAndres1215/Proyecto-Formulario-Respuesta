@@ -15,7 +15,7 @@ function Welcome() {
   }, []);
 
   return (
-    
+
     <div className="welcome-container">
       <div className={`welcome-card ${visible ? 'visible' : ''}`}>
         <h1>Bienvenidos</h1>

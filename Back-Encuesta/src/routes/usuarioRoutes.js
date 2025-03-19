@@ -1,6 +1,6 @@
 const express = require('express');
 const { body } = require('express-validator');
-const { crearUsuario, loginUsuario, obtenerPerfil } = require('../controllers/usuarioController');
+const { crearUsuario, loginUsuario, obtenerPerfil, listarUsuarios } = require('../controllers/usuarioController');
 const { verificarToken } = require('../middlewares/auth.middleware');
 
 const router = express.Router();
@@ -15,5 +15,5 @@ const validarRegistro = [
 router.post('/register', validarRegistro, crearUsuario);
 router.post('/login', loginUsuario);
 router.get('/perfil/:email', obtenerPerfil);
-
+router.get('/listar', listarUsuarios);
 module.exports = router;

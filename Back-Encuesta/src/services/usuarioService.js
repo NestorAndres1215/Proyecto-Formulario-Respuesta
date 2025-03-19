@@ -4,7 +4,6 @@ const bcrypt = require('bcryptjs');
 
 class UserService {
     static async crearUsuario(datos) {
-        console.log(datos)
         const { nombre, email, password, rol_id } = datos;
 
         // Validar si el nombre ya está en uso
@@ -26,6 +25,9 @@ class UserService {
 
     static async obtenerUsuarioPorEmail(email) {
         return await Usuario.findOne({ where: { email }, include: Rol });
+    }
+    static async listarUsuarios() {
+        return await Usuario.findAll({ include: { model: Rol } });
     }
 }
 

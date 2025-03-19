@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';  // Importar el hook useNavigate
-import { loginUser } from '../../services/loginService';  // Importar el servicio de login
-import { getUserProfile } from '../../services/loginService';  // Importar el servicio de login
+import { useState, useContext } from 'react'; // Agregar useContext
+import { useNavigate } from 'react-router-dom';
+import { loginUser, getUserProfile } from '../../services/loginService';
 import '../../styles/login.css';
-
+import { AuthContext } from '../../provider/AuthContext'; // Importar el contexto
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-
+  const { login } = useContext(AuthContext);
+  const { setUser } = useContext(AuthContext); // Usar el contexto de autenticación
   const navigate = useNavigate();  // Usar el hook para la navegación
 
   const handleSubmit = async (e) => {
@@ -21,11 +21,14 @@ function Login() {
       console.log(await loginUser(email, password))
 
       const { rol } = await getUserProfile(email);
-      console.log('Perfil completo del usuario:', rol);
-      // Guardamos el token en el almacenamiento local (localStorage)
+      const {nombre} = await getUserProfile(email);
+
       localStorage.setItem('token', token);
+      localStorage.setItem('nombre', nombre);
       console.log(token)
       console.warn(role)
+console.log(rol)
+      localStorage.setItem('rol', rol);
       // Redirigir según el rol del usuario
       if (rol === 'admin') {
         navigate('/admin-dashboard'); // Redirige al dashboard de admin

@@ -24,3 +24,15 @@ export const getUserProfile = async (email) => {
     throw error;
   }
 };
+export const listarUsuario = async () => {
+  try {
+    const response = await apiRequest('usuarios/listar', 'GET');
+    if (!response) {
+      throw new Error('No se pudo obtener la lista de usuarios');
+    }
+    return response;
+  } catch (error) {
+    console.error('Error al obtener la lista de usuarios:', error);
+    throw error;
+  }
+};
