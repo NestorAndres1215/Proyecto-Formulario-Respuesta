@@ -3,10 +3,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  background: linear-gradient(135deg, #001f4d, #0047ab); /* Azul oscuro a azul vibrante */
   transition: background 0.5s ease;
 }
 
+/* Contenedor principal */
 .welcome-container {
   display: flex;
   justify-content: center;
@@ -15,11 +16,12 @@ body {
   perspective: 1000px;
 }
 
+/* Tarjeta */
 .welcome-card {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 16px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   padding: 50px 40px;
   text-align: center;
   width: 100%;
@@ -32,25 +34,28 @@ body {
 
 .welcome-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
+/* Títulos */
 h1 {
-  color: #5a67d8;
+  color: #FFD700; /* Dorado */
   margin-bottom: 40px;
   font-size: 36px;
   font-weight: bold;
-  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   animation: titlePulse 2s infinite alternate;
   letter-spacing: 1px;
 }
 
+/* Grupo de botones */
 .button-group {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
+/* Estilos generales para botones */
 button {
   padding: 15px 0;
   border-radius: 50px;
@@ -64,6 +69,7 @@ button {
   letter-spacing: 0.5px;
 }
 
+/* Efecto de brillo en botones */
 button:before {
   content: '';
   position: absolute;
@@ -79,31 +85,33 @@ button:hover:before {
   left: 100%;
 }
 
+/* Botón de inicio de sesión */
 .login-btn {
-  background: linear-gradient(135deg, #4776E6, #8E54E9);
-  color: white;
-  box-shadow: 0 4px 15px rgba(70, 118, 230, 0.4);
+  background: linear-gradient(135deg, #0057e7, #00214d);
+  color: #FFD700;
+  box-shadow: 0 4px 15px rgba(0, 87, 231, 0.4);
+  border: 2px solid #FFD700;
 }
 
 .login-btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(70, 118, 230, 0.6);
+  box-shadow: 0 10px 20px rgba(0, 87, 231, 0.6);
 }
 
+/* Botón de registro */
 .register-btn {
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-  color: #5a67d8;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border: none;
+  background: linear-gradient(135deg, #0047ab, #001f4d);
+  color: #FFD700;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  border: 2px solid #FFD700;
 }
 
 .register-btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  background: linear-gradient(135deg, #e6e9f0, #c3cfe2);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.6);
 }
 
-/* Animations */
+/* Animaciones */
 @keyframes cardEntrance {
   from {
     opacity: 0;
@@ -126,9 +134,10 @@ button:hover:before {
   }
 }
 
-/* Optional text animation */
+/* Animación de texto */
 p {
   animation: fadeIn 2s;
+  color: #FFD700; /* Dorado */
 }
 
 @keyframes fadeIn {

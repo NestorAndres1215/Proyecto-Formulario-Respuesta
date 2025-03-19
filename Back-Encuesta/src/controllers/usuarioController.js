@@ -36,9 +36,13 @@ exports.loginUsuario = async (req, res) => {
     }
 };
 
-exports.obtenerPerfil = async (req, res) => {
+exports.obtenerPerfil = async (req, res) => { 
+   console.log(req.body)
+   const email = req.params.email; // Obtener el email de los parámetros de la URL
+   console.log(`Buscando usuario con email: ${email}`);
+
     try {
-        const usuario = await UserService.obtenerUsuarioPorEmail(req.usuario.email);
+        const usuario = await UserService.obtenerUsuarioPorEmail(email);
         if (!usuario) return res.status(404).json({ mensaje: 'Usuario no encontrado' });
 
         res.json({ id: usuario.id, nombre: usuario.nombre, email: usuario.email, rol: usuario.Rol.nombre });

@@ -1,0 +1,167 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+
+}
+
+/* Contenedor del formulario */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #001f4d, #0047ab);
+  padding: 20px;
+}
+
+/* Tarjeta */
+.form-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  padding: 40px;
+  width: 90%;
+  max-width: 400px;
+  animation: cardEntrance 1s ease-out forwards;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Títulos */
+.form-card h1 {
+  color: #FFD700; /* Dorado */
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  animation: titlePulse 2s infinite alternate;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFD700;
+  margin-left: 5px;
+  transition: color 0.3s ease;
+}
+
+input {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+input:focus {
+  outline: none;
+  border-color: #FFD700;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+input:hover {
+  background-color: #fff;
+  border-color: #cbd5e0;
+}
+
+/* Botón de envío */
+.submit-btn {
+  padding: 15px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #FFD700, #ffcc00);
+  color: #001f4d;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.6);
+}
+
+.submit-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.4);
+}
+
+/* Pie de formulario */
+.form-footer {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+  color: #FFD700;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.form-footer a {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.form-footer a:hover {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+/* Animaciones */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(50px) rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+@keyframes titlePulse {
+  from {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

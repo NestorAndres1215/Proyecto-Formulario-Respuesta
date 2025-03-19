@@ -7,7 +7,7 @@ const sequelize = new Sequelize('encuestas_db', 'root', '12345', {
 
 // Verificar la conexión
 sequelize.authenticate()
-    .then(() => console.log('Conectado a MySQL con Sequelize correctamente.'))
+    .then(() => console.log('Conectado a MySQL .'))
     .catch(err => console.error('Error de conexión con Sequelize:', err));
 
 module.exports = sequelize;

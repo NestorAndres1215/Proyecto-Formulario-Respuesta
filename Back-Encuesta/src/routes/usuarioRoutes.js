@@ -14,6 +14,6 @@ const validarRegistro = [
 
 router.post('/register', validarRegistro, crearUsuario);
 router.post('/login', loginUsuario);
-router.get('/perfil', verificarToken, obtenerPerfil);
+router.get('/perfil/:email', obtenerPerfil);
 
 module.exports = router;
