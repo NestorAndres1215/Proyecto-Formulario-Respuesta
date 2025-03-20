@@ -6,9 +6,9 @@ const Usuarios = () => {
     const [usuarios, setUsuarios] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage] = useState(5); // Número de usuarios por página
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage] = useState(5);
     useEffect(() => {
         const fetchUsuarios = async () => {
             try {
@@ -27,9 +27,9 @@ const Usuarios = () => {
     // Lógica de paginación
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = usuarios.slice(indexOfFirstItem, indexOfLastItem);
-
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    const currentEncuestas = usuarios.slice(indexOfFirstItem, indexOfLastItem);
+  
+    const totalPages = Math.ceil(usuarios.length / itemsPerPage);
 
     if (loading) return <div className="loading-message">Cargando usuarios...</div>;
     if (error) return <div className="error-message">{error}</div>;
@@ -47,7 +47,7 @@ const Usuarios = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {currentItems.map((usuario) => (
+                    {currentEncuestas.map((usuario) => (
                         <tr key={usuario.id}>
                             <td>{usuario.nombre}</td>
                             <td>{usuario.email}</td>
@@ -63,16 +63,24 @@ const Usuarios = () => {
 
             {/* Paginación */}
             <div className="pagination">
-                {Array.from({ length: Math.ceil(usuarios.length / itemsPerPage) }, (_, i) => (
-                    <button
-                        key={i + 1}
-                        onClick={() => paginate(i + 1)}
-                        className={currentPage === i + 1 ? 'active' : ''}
-                    >
-                        {i + 1}
-                    </button>
-                ))}
-            </div>
+        <button
+          className="pagination-btn"
+          disabled={currentPage === 1}
+          onClick={() => setCurrentPage(currentPage - 1)}
+        >
+          « Anterior
+        </button>
+        <span>
+          Página {currentPage} de {totalPages}
+        </span>
+        <button
+          className="pagination-btn"
+          disabled={currentPage === totalPages}
+          onClick={() => setCurrentPage(currentPage + 1)}
+        >
+          Siguiente »
+        </button>
+      </div>
         </div>
     );
 };

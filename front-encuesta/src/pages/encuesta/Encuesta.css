@@ -1,0 +1,325 @@
+/* Estilos generales */
+.encuestas-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+  }
+  
+  .encuestas-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Tabla de usuarios */
+  .encuestas-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    animation: slideIn 0.5s ease-in-out;
+  }
+  
+  .encuestas-table th,
+  .encuestas-table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .encuestas-table thead {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .encuestas-table th {
+    font-weight: bold;
+  }
+  
+  .encuestas-table tbody tr {
+    border-bottom: 1px solid #f1f1f1;
+    transition: background-color 0.3s ease;
+  }
+  
+  .encuestas-table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .encuestas-table tbody tr:last-child {
+    border-bottom: none;
+  }
+  
+  /* Paginación */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    padding: 8px 12px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination button:hover {
+    background-color: #2980b9;
+  }
+  
+  .pagination button.active {
+    background-color: #2c3e50;
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Estilos para el estado de carga y error */
+  .loading-message,
+  .error-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #e74c3c;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .loading-message {
+    color: #3498db;
+  }
+  .encuestas-table thead {
+    background-color: #2c3e50; /* Cambia el color de la cabecera */
+  }
+  
+  .pagination button {
+    background-color: #2c3e50; /* Cambia el color de los botones */
+  }
+
+
+  /* Estilos para los botones de acción */
+  .action-button {
+    display: inline-flex; /* Mantiene los botones alineados correctamente */
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto; /* Asegura que no ocupen todo el ancho */
+    min-width: 80px; /* Tamaño mínimo */
+  }
+  
+  .action-button.edit {
+    background-color: #3498db;
+    color: white;
+  }
+  
+
+  .action-button.delete {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .action-button.delete:hover {
+    background-color: #c0392b;
+  }
+    .action-button.edit:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Eliminar el margen derecho del último botón */
+  .action-button:last-child {
+    margin-right: 0;
+  }
+  .register-button {
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  
+  .register-button:hover {
+    background-color: #218838;
+  }
+  
+/* Fondo del modal con desenfoque */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px); /* Aplica desenfoque */
+    visibility: hidden;
+    z-index: 1050; /* Asegura que el modal esté por encima de todo */
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Cuando el modal está activo */
+.modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Contenido del modal */
+.modal-content {
+    background: #2c3e50; /* Color similar al panel */
+    padding: 25px;
+    border-radius: 10px;
+    width: 420px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
+    color: white; /* Texto en blanco */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Título del modal */
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 22px;
+    text-align: center;
+    border-bottom: 2px solid #34495e;
+    padding-bottom: 10px;
+}
+
+/* Estilos para los labels */
+.modal-content label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ddd;
+}
+/* Título del modal */
+.modal-title {
+    font-size: 22px;
+color: white;
+
+  }
+/* Inputs y textarea */
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #34495e;
+    border-radius: 5px;
+    background: #1f2d3d;
+    color: white;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+    border: 1px solid #17a2b8;
+    outline: none;
+}
+
+/* Botones */
+.btn {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.btn-primary {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #138496;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Botón para abrir el modal */
+.btn-open {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.btn-open:hover {
+    background-color: #218838;
+}
+
+/* Diseño responsivo */
+@media (max-width: 480px) {
+    .modal-content {
+        width: 90%;
+    }
+}
+.modal-content p {
+    color: white;
+    font-size: 16px;
+  }
+  
+  .modal-content strong {
+    color: white;
+  }
+  

@@ -7,15 +7,15 @@ import { AuthContext } from '../../provider/AuthContext';
 
 function AdminDashboard() {
   const navigate = useNavigate();
-  const user  = useContext(AuthContext); // Accede al usuario desde el contexto
-console.log(user)
+  const user = useContext(AuthContext); // Accede al usuario desde el contexto
+  console.log(user)
   const [userData, setUserData] = useState({
     name: 'Admin Usuario',
     role: 'Administrador',
     lastLogin: '18 Mar 2025, 10:30 AM'
   });
 
- 
+
   const [nombre, setNombre] = useState(""); // Estado para nombre
   const [rol, setRole] = useState(""); // Estado para role
   const [activeMenu, setActiveMenu] = useState('dashboard');
@@ -24,7 +24,7 @@ console.log(user)
     const token = localStorage.getItem('token');
     const storedNombre = localStorage.getItem("nombre");
     const storedRole = localStorage.getItem("rol"); // Si el rol también está en localStorage
-console.log(storedRole)
+    console.log(storedRole)
     // Actualizar el estado
     if (storedNombre) setNombre(storedNombre);
     if (storedRole) setRole(storedRole);
@@ -59,8 +59,8 @@ console.log(storedRole)
             {userData.name.charAt(0)}
           </div>
           <div className="user-info">
-          <h3>{nombre || "Usuario desconocido"}</h3>
-          <p>{rol || "Rol no definido"}</p>
+            <h3>{nombre || "Usuario desconocido"}</h3>
+            <p>{rol || "Rol no definido"}</p>
           </div>
         </div>
 

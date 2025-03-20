@@ -13,6 +13,7 @@ export const listarEncuesta = async () => {
 };
 export const listarEncuestaPorUsuario = async (usuarioId) => {
     try {
+        console.log(usuarioId)
         const response = await apiRequest(`encuesta/listar/usuario/${usuarioId}`, 'GET');
         if (!response) {
             throw new Error('No se pudo obtener la lista de encuestas');

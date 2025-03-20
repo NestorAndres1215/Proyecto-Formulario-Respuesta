@@ -21,10 +21,12 @@ function Login() {
       console.log(await loginUser(email, password))
 
       const { rol } = await getUserProfile(email);
-      const {nombre} = await getUserProfile(email);
+      const {id,nombre} = await getUserProfile(email);
+
 
       localStorage.setItem('token', token);
       localStorage.setItem('nombre', nombre);
+      localStorage.setItem('codigo', id);
       console.log(token)
       console.warn(role)
 console.log(rol)
