@@ -79,8 +79,8 @@ class EncuestaService {
         });
     }
 
-    static async eliminarEncuesta(id, usuario_id) {
-        const encuesta = await Encuesta.findOne({ where: { id, usuario_id } });
+    static async eliminarEncuesta(id) {
+        const encuesta = await Encuesta.findOne({ where: { id} });
         if (!encuesta) throw new Error('Encuesta no encontrada o no pertenece al usuario');
 
         await encuesta.destroy();

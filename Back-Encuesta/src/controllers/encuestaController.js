@@ -43,7 +43,7 @@ exports.eliminarEncuesta = async (req, res) => {
     const usuario_id = req.body.usuario_id; // Obtener usuario_id del body
 
     try {
-        await EncuestaService.eliminarEncuesta(id, usuario_id);
+        await EncuestaService.eliminarEncuesta(id);
         res.json({ mensaje: 'Encuesta eliminada correctamente' });
     } catch (error) {
         res.status(400).json({ mensaje: error.message });
