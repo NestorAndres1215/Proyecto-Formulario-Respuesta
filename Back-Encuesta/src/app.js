@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const userRoutes = require('./routes/usuarioRoutes');
 const rolRoutes = require('./routes/rolRoutes');
 const encuestaRoutes = require('./routes/encuestaRoutes');
+const preguntaRoutes = require('./routes/preguntaRoutes')
 const app = express();
 
 app.use(cors());
@@ -14,4 +15,5 @@ app.use(express.urlencoded({ extended: true })); // 📌 Para datos en formulari
 app.use('/api/usuarios', userRoutes);
 app.use('/api/roles', rolRoutes);
 app.use('/api/encuesta', encuestaRoutes);
+app.use('/api/pregunta', preguntaRoutes);
 module.exports = app;
