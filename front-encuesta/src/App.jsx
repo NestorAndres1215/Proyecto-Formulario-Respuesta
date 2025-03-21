@@ -4,7 +4,7 @@ import Login from './pages/usuario/Login';
 import Register from './pages/usuario/Register';
 import { useState, useEffect } from 'react';
 import AdminDashboard from './pages/config/AdminDashboard';
-
+import UserDashboard from './pages/config/UserDashboard';
 function Welcome() {
   const [visible, setVisible] = useState(false);
   const navigate = useNavigate();  // Hook para navegar
@@ -45,6 +45,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path='/admin-dashboard' element={<AdminDashboard />} ></Route>
+      <Route path='/user-dashboard' element={<UserDashboard />} ></Route>
       <Route path="*" element={<h1>Página no encontrada</h1>} />
     </Routes>
   );

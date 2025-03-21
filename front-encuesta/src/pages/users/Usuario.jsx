@@ -43,7 +43,6 @@ const Usuarios = () => {
                         <th>Nombre</th>
                         <th>Email</th>
                         <th>Rol</th>
-                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,10 +51,6 @@ const Usuarios = () => {
                             <td>{usuario.nombre}</td>
                             <td>{usuario.email}</td>
                             <td>{usuario.rol}</td>
-                            <td>
-                                <button className="action-button edit">✏️ Editar</button>
-                                <button className="action-button delete">🗑️ Eliminar</button>
-                            </td>
                         </tr>
                     ))}
                 </tbody>

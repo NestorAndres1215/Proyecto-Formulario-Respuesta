@@ -4,6 +4,7 @@ import '../../styles/dashboard.css';
 import Usuarios from '../users/Usuario';
 import Encuestas from '../encuesta/Escuesta';
 import { AuthContext } from '../../provider/AuthContext';
+import Pregunta from '../pregunta/Pregunta';
 
 function AdminDashboard() {
   const navigate = useNavigate();
@@ -75,8 +76,8 @@ function AdminDashboard() {
             <li className={activeMenu === 'encuestas' ? 'active' : ''} onClick={() => setActiveMenu('encuestas')}>
               <span className="icon">📋</span> Encuestas
             </li>
-            <li className={activeMenu === 'ventas' ? 'active' : ''} onClick={() => setActiveMenu('ventas')}>
-              <span className="icon">💰</span> Ventas
+            <li className={activeMenu === 'pregunta' ? 'active' : ''} onClick={() => setActiveMenu('pregunta')}>
+            <span className="icon">❓</span> Preguntas
             </li>
             <li className={activeMenu === 'ajustes' ? 'active' : ''} onClick={() => setActiveMenu('ajustes')}>
               <span className="icon">⚙️</span> Ajustes
@@ -115,6 +116,7 @@ function AdminDashboard() {
           {activeMenu === 'dashboard' && <h2>Bienvenido al Dashboard</h2>}
           {activeMenu === 'usuarios' && <Usuarios />}
           {activeMenu === 'encuestas' && <Encuestas />}
+          {activeMenu === 'pregunta' && <Pregunta />}
           {activeMenu === 'ajustes' && <Ajustes />}
         </div>
 
